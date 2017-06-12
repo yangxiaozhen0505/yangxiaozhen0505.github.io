@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="六种继承方式12345678let util = require(&#39;util&#39;);function Parent() &amp;#123;    this.drink = &#39;hh&#39;&amp;#125;Parent.prototype.eat = &#39;fff&#39;;function Child() &amp;#123;&amp;#125;">
+        <meta name="description" content="搭建博客12345$ npm install hexo-cli -g  npm init blog  cd blog  npm init  hexo server">
     
 
     <!--Author-->
@@ -180,30 +180,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="六种继承方式"><a href="#六种继承方式" class="headerlink" title="六种继承方式"></a>六种继承方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.drink = <span class="string">'hh'</span></div><div class="line">&#125;</div><div class="line">Parent.prototype.eat = <span class="string">'fff'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="1-儿子继承父亲"><a href="#1-儿子继承父亲" class="headerlink" title="1,儿子继承父亲"></a>1,儿子继承父亲</h3><ul>
-<li>既有私有属性，也有公有属性 不能 传参</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Child.prototype = <span class="keyword">new</span> Parent();</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.eat);</div><div class="line"><span class="built_in">console</span>.log(child.drink);</div></pre></td></tr></table></figure>
-<h3 id="2-只继承私有"><a href="#2-只继承私有" class="headerlink" title="2,只继承私有"></a>2,只继承私有</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    Parent.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.eat);</div><div class="line"><span class="built_in">console</span>.log(child.drink);</div></pre></td></tr></table></figure>
-<h3 id="3-子类继承父类的公有有的属性"><a href="#3-子类继承父类的公有有的属性" class="headerlink" title="3,子类继承父类的公有有的属性"></a>3,子类继承父类的公有有的属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creat</span>(<span class="params">parentPrototype</span>) </span>&#123;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">     Fn.prototype = parentPrototype;<span class="comment">//将当前父类的原型，赋予Fn这个函数</span></div><div class="line">     <span class="keyword">return</span> <span class="keyword">new</span> Fn();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype = creat(Parent.prototype);</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.drink);</div><div class="line"><span class="built_in">console</span>.log(child.eat);</div></pre></td></tr></table></figure>
-<h3 id="4，原型链继承-只继承公有的"><a href="#4，原型链继承-只继承公有的" class="headerlink" title="4，原型链继承 只继承公有的"></a>4，原型链继承 只继承公有的</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Child.prototype.__proto__=Parent.prototype;</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.eat); <span class="comment">//fff</span></div><div class="line"><span class="built_in">console</span>.log(child.drink);<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<h3 id="5-Es6-只继承公有"><a href="#5-Es6-只继承公有" class="headerlink" title="5, Es6 只继承公有"></a>5, Es6 只继承公有</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.setPrototypeOf(Child.prototype,Parent.prototype);</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.eat); <span class="comment">//fff</span></div><div class="line"><span class="built_in">console</span>.log(child.drink);<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<h3 id="6-node-继承公有属性"><a href="#6-node-继承公有属性" class="headerlink" title="6 node 继承公有属性"></a>6 node 继承公有属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">util.inherits(Child,Parent);</div><div class="line"><span class="keyword">let</span> child = <span class="keyword">new</span> Child();</div><div class="line"><span class="built_in">console</span>.log(child.eat);</div></pre></td></tr></table></figure>
-<h2 id="二，判断数据类型"><a href="#二，判断数据类型" class="headerlink" title="二，判断数据类型"></a>二，判断数据类型</h2><ul>
-<li>1,typeof 不能比较对象数据类型</li>
-<li>2.instanceof 不能区分实例、</li>
-<li>3,constructor 看当前实例的构造函数</li>
-<li><p>4,object.prototype.toString.call</p>
-</li>
-<li><p>检测数据类型 返回值是布尔类型</p>
-<ul>
-<li>util.isArray() 是不是数组</li>
-<li>util.isFunction() 是不是函数</li>
-</ul>
-</li>
-</ul>
-
+                <h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div><div class="line">  npm init blog</div><div class="line">  <span class="built_in">cd</span> blog</div><div class="line">  npm init</div><div class="line">  hexo server</div></pre></td></tr></table></figure>
 
                 
             </div>
