@@ -10,6 +10,13 @@
 
     <!--Description-->
     
+        <meta name="description" content="1, npm node package manager
+管理所有的第三方模块
+安装node 就有npm 2, npm 可以安装第三方模块
+全局安装 -g的特点 只能在命令行使用
+npm install nrm -g 可以帮助我们切换安装的源头(淘宝 中国源)
+全局安装后，会在全局安装命令行下，提供一">
+    
 
     <!--Author-->
     
@@ -40,7 +47,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Hexo</title>
+    <title>Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -142,88 +149,106 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Untitled</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-06-15
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/06/15/npm/">
-        <h1 class="post-title archive">
-            Untitled
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/06/15/webpack-dev/">
-        <h1 class="post-title archive">
-            Untitled
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/06/13/inherits/">
-        <h1 class="post-title archive">
-            Jenney
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-13
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/06/12/hello-world/">
-        <h1 class="post-title archive">
-            Jenney
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-06-12
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="1-npm-node-package-manager"><a href="#1-npm-node-package-manager" class="headerlink" title="1, npm node package manager"></a>1, npm node package manager</h2><ul>
+<li>管理所有的第三方模块</li>
+<li>安装node 就有npm <h2 id="2-npm-可以安装第三方模块"><a href="#2-npm-可以安装第三方模块" class="headerlink" title="2, npm 可以安装第三方模块"></a>2, npm 可以安装第三方模块</h2></li>
+<li>全局安装 -g的特点 只能在命令行使用</li>
+<li>npm install nrm -g 可以帮助我们切换安装的源头(淘宝 中国源)</li>
+<li>全局安装后，会在全局安装命令行下，提供一个命令nrm</li>
+<li>全局安装不会配置到环境变量中，相当于在npm下创建了一个快捷方式，链接真实的nrm<h2 id="nrm-命令的使用"><a href="#nrm-命令的使用" class="headerlink" title="nrm 命令的使用"></a>nrm 命令的使用</h2></li>
+<li>npm install http-server -g 网页服务器</li>
+<li>http-server -p xxx 修改端口号为xxx</li>
+<li>nrm ls 列出所有源</li>
+<li>nrm use xxx 切换使用源</li>
+<li>nrm test 测试源的响应时间</li>
+<li>nrm add xxx  添加源</li>
+<li>nrm del xxx 删除源</li>
 </ul>
+<ul>
+<li>npm info jquery 有哪些版本</li>
+</ul>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><ul>
+<li>npm install yarn -g 安装yarn可以加快安装其他模块的速度</li>
+<li>yarn init -y 初始化一个package.json文件，用于配置安装的列表清单</li>
+<li>yarn add jquery @版本号 默认安装的就是项目依赖</li>
+<li>yarn add babel-core –dev 安装开发依赖</li>
+<li>yarn remove jquery 删除</li>
+<li><p>yarn install 默认安装全部依赖</p>
+</li>
+<li><p>自己开发第三方模块(上传到npm网上)</p>
+</li>
+<li>需要一个包，包里有入口文件、package.json、README.md</li>
+<li>nrm use npm 发包需要在官网上</li>
+<li>npm addUser 登录账号，之前注册过就是登录，没有注册过，在这里就相当于注册账号</li>
+<li>npm whoami 看有没有登录/注册成功</li>
+<li>npm publish 公布<br>修改发布要更改一个比它高的版本号 重新执行npm publish即可</li>
+<li>npm unpublish –force 取消发布</li>
+</ul>
+<h2 id="升级内容"><a href="#升级内容" class="headerlink" title="升级内容"></a>升级内容</h2><ul>
+<li>重新更改版本，注：当前项目不能和要安装的项目名字相同 ENOself<blockquote>
+<p>会自动去当前node_modules下查找同名的文件，找到package.json 执行对应的main文件，如果没有，会自动往上找，找到根目录为止</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>modules.paths 一般第三方模块全部安装在当前目录 ，如果是文件模块，可以自动添加js后缀</p>
+<p>package.json中可以配置脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;:&#123;</div><div class="line">    &quot;start&quot;:&quot;node use.js&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>等于给use.js 配置了一个快捷方式 直接在命令窗口 npm run start就可以运行use.js文件 但是start比较特殊，可以不用run 直接npm start就可以</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
